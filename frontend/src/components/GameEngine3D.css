@@ -1,0 +1,325 @@
+.game-engine-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+.game-canvas {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  cursor: crosshair;
+  outline: none;
+}
+
+.game-message {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  max-width: 80%;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  border: 2px solid #555;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.camera-controls {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.camera-title {
+  font-size: 12px;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.camera-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin-bottom: 8px;
+}
+
+.camera-buttons button {
+  width: 30px;
+  height: 30px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.camera-buttons button:hover {
+  background-color: #444;
+}
+
+.camera-buttons button:nth-child(2) {
+  grid-column: 2;
+}
+
+.camera-buttons button:nth-child(3) {
+  grid-column: 2;
+}
+
+.camera-buttons button.active {
+  background-color: #8e44ad;
+  box-shadow: 0 0 5px rgba(142, 68, 173, 0.7);
+  transform: translateY(-2px);
+}
+
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.zoom-controls button {
+  width: 24px;
+  height: 24px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.zoom-level {
+  padding: 0 10px;
+  color: #ccc;
+  font-size: 12px;
+}
+
+.camera-help {
+  font-size: 10px;
+  color: #999;
+  text-align: center;
+}
+
+.game-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+  gap: 10px;
+}
+
+.wasd-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.wasd-row {
+  display: flex;
+  gap: 2px;
+}
+
+.wasd-key {
+  width: 36px;
+  height: 36px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s;
+}
+
+.wasd-key:hover {
+  background-color: #444;
+  transform: translateY(-2px);
+}
+
+.wasd-key:active {
+  transform: translateY(0);
+  background-color: #2a2a2a;
+}
+
+.action-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.action-controls button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s;
+}
+
+.action-controls button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.action-controls button:active {
+  transform: translateY(0);
+  background-color: #2475a7;
+}
+
+.command-form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.command-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #3498db;
+  border-radius: 5px 0 0 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.command-input:focus {
+  border-color: #8e44ad;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 10px rgba(142, 68, 173, 0.5);
+}
+
+.command-input::placeholder {
+  color: #888;
+}
+
+.command-button {
+  padding: 0 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.command-button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.command-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Hide controls on smaller screens */
+@media (max-width: 768px) {
+  .wasd-controls, .action-controls {
+    display: none;
+  }
+  
+  .camera-controls {
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+  }
+  
+  .camera-buttons button {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+}
+
+/* For touch devices */
+@media (hover: none) {
+  .wasd-controls {
+    display: flex;
+  }
+  
+  .wasd-key {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+  
+  .game-message {
+    bottom: 140px;
+  }
+}
+
+.toggle-ui-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-ui-button:hover {
+  background-color: rgba(30, 30, 30, 0.8);
+  transform: scale(1.1);
+} 

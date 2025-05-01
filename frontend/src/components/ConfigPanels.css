@@ -1,0 +1,176 @@
+.config-panel {
+  height: 100%;
+  overflow-y: auto;
+  font-size: 14px;
+  background-color: rgba(30, 30, 40, 0.9);
+  border-radius: 8px;
+}
+
+.config-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: linear-gradient(to right, #8e44ad, #3498db);
+  color: white;
+  cursor: pointer;
+  border-bottom: 1px solid #2980b9;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.config-header:hover {
+  background: linear-gradient(to right, #9b59b6, #2980b9);
+}
+
+.config-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.toggle-icon {
+  font-size: 12px;
+}
+
+.config-content {
+  padding: 15px;
+}
+
+.config-content h4 {
+  margin: 12px 0 8px;
+  color: #e5e5e5;
+  border-bottom: 1px solid #555;
+  padding-bottom: 6px;
+  font-size: 15px;
+}
+
+.config-item {
+  margin-bottom: 15px;
+}
+
+.config-item label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #bbb;
+}
+
+.config-control {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #2d2d3d;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.config-control:focus {
+  border-color: #8e44ad;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(142, 68, 173, 0.2);
+}
+
+.config-checkbox {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.config-checkbox input {
+  margin-right: 8px;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: #8e44ad;
+}
+
+.config-checkbox label {
+  color: #bbb;
+  cursor: pointer;
+}
+
+.stats-list, .inventory-list {
+  margin-bottom: 20px;
+}
+
+.stat-item, .inventory-item {
+  padding: 5px 0;
+  border-bottom: 1px dotted #555;
+}
+
+.stat-name {
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-right: 8px;
+  color: #9c9cde;
+}
+
+.stat-value {
+  color: #ddd;
+}
+
+.inventory-item {
+  background-color: rgba(45, 45, 70, 0.7);
+  margin: 5px 0;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  display: flex;
+  align-items: center;
+  color: #f5f5f5;
+}
+
+.inventory-item:before {
+  content: "🎒";
+  margin-right: 8px;
+}
+
+.empty-inventory {
+  font-style: italic;
+  color: #888;
+  padding: 10px 0;
+}
+
+.world-theme {
+  margin-bottom: 15px;
+}
+
+.theme-badge {
+  display: inline-block;
+  background: linear-gradient(to right, #8e44ad, #3498db);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.quest-list {
+  margin-bottom: 15px;
+}
+
+.quest-option {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.quest-option:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.quest-option input {
+  margin-right: 8px;
+  accent-color: #8e44ad;
+}
+
+.story-toggles {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #555;
+} 
